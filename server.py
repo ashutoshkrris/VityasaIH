@@ -10,6 +10,20 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
 
+@app.route('/')
+def api_doc():
+    response_data = {
+        "status": 200,
+        "message": "Up and Running",
+        "api doc": "https://documenter.getpostman.com/view/12174054/TW6xnngp",
+        "developed by": "Ashutosh Krishna",
+        "github repo": "https://github.com/ashutoshkrris/VityasaIH",
+        "github profile": "https://github.com/ashutoshkrris",
+        "portfolio": "https://ashutoshkrris.tk"
+    }
+    return response_data
+
+
 # Question 1
 @app.route('/items', methods=['POST'])
 def question_one():
@@ -122,7 +136,7 @@ def cancel_booking():
 #     points.append((x,y))
 #     print(points)
 #     return jsonify(points)
-    
+
 
 if __name__ == '__main__':
     # points = []
